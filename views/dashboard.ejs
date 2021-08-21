@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+</head>
+
+<body>
+    <div id="heading">
+        <h1>Captcha Generator App</h1>
+    </div>
+    <h2>Dashboard</h2>
+    <div id="wrapper">
+        <div>
+            <div id="messageDiv">
+                <div id="message" style="width:100%;">
+                    <% if (message != '') { %>
+                        <%= message %>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

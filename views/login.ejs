@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+</head>
+
+<body>
+    <div id="heading">
+        <h1>Captcha Generator App</h1>
+    </div>
+    <h2>Login Form</h2>
+    <div id="wrapper">
+        <div>
+            <div id="messageDiv">
+                <div id="message">
+                    <% if (message != '') { %>
+                        <%= message %>
+                    <% } %>
+                </div>
+            </div>
+            <div class="form-container">
+                <form action="/login" method="POST">
+                    <div class="textInputDiv">
+                        <label for="name"><strong>Enter your Name</strong></label>
+                        <input type="text" id="name" name="name" placeholder="Name" required>
+                    </div>
+                    <div class="textInputDiv">
+                        <label for="captcha"><strong>Enter Captcha</strong></label> <br>
+                        <canvas id="canvas"></canvas>
+                        <input type="text" id="captcha" name="captcha" placeholder="Captcha" required>
+                    </div>
+                    <button type="submit" id="submit">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        var canvas = document.getElementById('canvas');
+        ctx = canvas.getContext('2d');
+        var randomText = "<%= randomText %>"
+        console.log(randomText)
+        ctx.font = "70px Comic Sans MS";
+        ctx.textAlign = "center";
+        ctx.fillText(randomText, canvas.width / 2, canvas.height / 2);
+    </script>
+</body>
+
+</html>
